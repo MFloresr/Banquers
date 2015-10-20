@@ -45,6 +45,25 @@ public class Jugadores {
         return CaraMoneda;
     }
 
+    //acciones
+    public final int DarDinero() {
+        diners= (int)(Math.random()*(200)+1);
+        return diners;
+    }
+
+    public final int DarCara() {
+        CaraMoneda= (int) (Math.random()*(2)); //genera numero entre 0 y 1
+        return CaraMoneda;
+    }
+
+    public final String DarNombre() {
+        int i= (int) (Math.random()*(100)+1);
+        int j= (int) (Math.random()*(100)+1);
+        nombre = String.format("Participant_%s", i+j);
+        return nombre;
+    }
+
+
     public void setCaraMoneda(int caraMoneda) {
         CaraMoneda = caraMoneda;
     }
