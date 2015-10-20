@@ -27,20 +27,22 @@ public class Juego {
         
     }
     public void borrarBanquero(List<Jugadores> jugadores) {
+
         if (cara>cruz) {
-            for (Iterator<Jugadores> it = jugadores.iterator(); it.hasNext();) {
-                Jugadores j = it.next();
-                if(j.getCaraMoneda()== 0){
-                    it.remove();
+            for (int i =0;i<jugadores.size();i++) {
+                if(jugadores.get(i).getCaraMoneda()==0){
+                    jugadores.remove(i);
                 }
-                //jugadores.remove(jugadores.get(i).getCaraMoneda() == 0);
             }
+
             System.out.println("Borramos Cara");
         }else{
-            for(int i=0;i<jugadores.size();i++){
-                jugadores.remove(jugadores.get(i).getCaraMoneda() == 1);
+            for (int i =0;i<jugadores.size();i++) {
+                if(jugadores.get(i).getCaraMoneda()==1){
+                    jugadores.remove(i);
+                }
             }
-            System.out.println("Borramos Cruz");
+            System.out.println("Borramos Cara");
         }
 
     }
