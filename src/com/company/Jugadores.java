@@ -1,70 +1,54 @@
 package com.company;
-
 import java.util.Random;
 
-/**
- * Created by Vipi on 13/10/2015.
- */
 public class Jugadores {
+
+    //varialbles de la clase jugador
     private String nombre;
     private int diners;
     private int CaraMoneda;
     private Random rand = new Random();
 
-
-    public Jugadores(String nombre,int diners, int CaraMoneda){
-        this.nombre=nombre;
-        this.diners=diners;
-        this.CaraMoneda=CaraMoneda;
-    }
+    //contructor
     public Jugadores(){
 
     }
-    public int TirarMoneda(){
-        int CaraMoneda = rand.nextInt(1);
-        return CaraMoneda;
-    }
 
-    public int getMoneda() {
+    //muestra el valor de la cantidad de dinero que tiene el jugador
+    public int getDiners() {
         return diners;
     }
 
-    public void setMoneda(int moneda) {
-        this.diners = moneda;
-    }
-
+    //muestra el nombre del jugador
     public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
+    //muestra la cara de mneda que escogio el jugador
     public int getCaraMoneda() {
         return CaraMoneda;
     }
 
-    //acciones
-    public final int DarDinero() {
+    //nos da una nueva cantidad de dinero de un jugador
+    public final int SetDiners() {
         diners= (int)(Math.random()*(200)+1);
         return diners;
     }
 
-    public final int DarCara() {
+    //nos da una nueva cara de la moneda de forma aleatoria para un jugador
+    public final int SetCara() {
         CaraMoneda= (int) (Math.random()*(2)); //genera numero entre 0 y 1
         return CaraMoneda;
     }
 
-    public final String DarNombre() {
+    //nos da un nombre pa un jugador
+    public final String SetNombre() {
         int i= (int) (Math.random()*(100)+1);
         int j= (int) (Math.random()*(100)+1);
         nombre = String.format("Participant_%s", i+j);
         return nombre;
     }
-
-
-    public void setCaraMoneda(int caraMoneda) {
-        CaraMoneda = caraMoneda;
-    }
 }
+
+
+
